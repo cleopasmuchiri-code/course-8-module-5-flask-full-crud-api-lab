@@ -55,6 +55,7 @@ def update_event(event_id):
     # TODO: Task 2 - Design and Develop the Code
     event = find_event(event_id)
 
+    # TODO: Task 3 - Implement the Loop and Process Each Element
     if event is None:
         return jsonify({"error": "Event not found"}), 404
 
@@ -64,8 +65,6 @@ def update_event(event_id):
         if not data["title"]:
             return jsonify({"error": "Title not found"}), 400
         event.title = data["title"]
-
-    # TODO: Task 3 - Implement the Loop and Process Each Element
 
     # TODO: Task 4 - Return and Handle Results
     return jsonify(event.to_dict()), 200
